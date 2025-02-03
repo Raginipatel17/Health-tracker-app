@@ -1,0 +1,14 @@
+<div class="@container">
+  <div class="flex flex-col justify-between @md:flex-row">
+    <div class="flex">
+      <img src="image.jpg" width="60px" height="50px" />
+      <h1 class="text-3xl font-extrabold cursor-pointer"><a routerLink="addworkout">Health Fitness Tracker</a></h1>
+    </div>
+    <ul class="flex flex-col gap-x-15 lg:me-5   @md:flex-row m-x-4">
+      <li class="p-2 cursor-pointer "><a routerLink="addworkout">Workout</a></li>
+      <li class="p-2 cursor-pointer "><a routerLink="workoutdetails">Details</a></li>
+      <li class="p-2 cursor-pointer "><a routerLink="workprogress">Progress</a></li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>

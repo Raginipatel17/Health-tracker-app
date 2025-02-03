@@ -1,0 +1,43 @@
+<div class="flex justify-center m-4 bg-gray-200 h-screen p-5">
+<div class="w-350">
+    <form class="flex justify-between">
+        <label for="search" class="shadow-md " >
+            <input type="search" placeholder="Search" name="search" class="w-150 p-4 bg-white" (input)="search($event)">
+        </label>
+        <label for="filter" class="shadow-md h-15 p-3 bg-white">
+            <div class="text-xs">Filter By Workout type</div>
+            <select class="w-100 " name="setfilter" (change)="workoutsearch($event)">
+                <option *ngFor="let item of workouttypeFilter">{{item}}</option>
+            </select>
+            
+        </label>
+    </form>
+    <table class="w-350 shadow-md mt-5 bg-white">
+        <tr class="shadow-md m-1 p-5">
+            <th class="text-start p-3">Sno.</th>
+            <th class="text-start p-3">Name</th>
+            <th class="text-start p-3">Workouts</th>
+            <th class="text-start p-3">Number of Workouts</th>
+            <th class="text-start p-3">Total Workout Minutes</th>
+        </tr>
+        <tr class="shadow-md m-1 p-10"  *ngFor="let i of paginationitem,index as index">
+            <td class="p-3 text-start" *ngIf="i.isSearched==true || i.isinitemlist==true">{{currentpage==1?index+1:startindex+index+1}}</td>
+            <td class="p-3 text-start" *ngIf="i.isSearched==true || i.isinitemlist==true">{{i.Name}}</td>
+            <td class="p-3 text-start" *ngIf="i.isSearched==true || i.isinitemlist==true"><span *ngFor="let workout of i.workout"> {{ workout.type }} </span></td>
+            <td class="p-3 text-start " *ngIf="i.isSearched==true || i.isinitemlist==true">{{i.totalworkout}}</td>
+            <td class="p-3 text-start " *ngIf="i.isSearched==true || i.isinitemlist==true">{{i.totalminutes}}</td>
+        </tr>
+    </table>
+    <div class="flex justify-center items-center m-4 gap-3"> 
+        <button class="max-w-fit drop-shadow-lg cursor-pointer p-1 bg-white" (click)="previous()">&#8612; Previous</button>
+        <button class="max-w-fit drop-shadow-lg cursor-pointer p-2 bg-white" *ngFor="let index of pages,index as i" (click)="selectpage(i)">{{index}}</button>
+        <button class="max-w-fit drop-shadow-lg cursor-pointer p-1 bg-white" (click)="next()">Next &#8614;</button>
+        <span  class="text-bold">items per page:</span>
+        <select class="max-w-fit drop-shadow-lg cursor-pointer p-1 bg-white" (change)="pagination($event)">
+            <option *ngFor="let index of indexlist" value="{{index}}">{{index}}</option>
+        </select>
+    
+
+    </div>
+</div>
+</div>

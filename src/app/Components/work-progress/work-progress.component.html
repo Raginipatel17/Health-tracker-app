@@ -1,0 +1,11 @@
+<div style="width: 100vw; height: 93vh;" class="bg-gray-200">
+<h1 class="text-4xl text-center p-4 font-bold italic">Workout Progress Reports</h1>
+<div style="width: 100vw; height: 70vh;" class="flex justify-between">
+  <div class="w-sm bg-gray-50 max-h-fit bg-white m-5">
+  <div *ngFor="let item of workoutlist" class="p-3 shadow-md border-rad cursor-pointer font-bold" (click)="generateGraph(item)">{{item.Name}} </div>
+  </div>
+  <div >
+  <canvas #myChart class="w-230 h-50 text-xl" ></canvas>
+</div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="flex bg-gray-200 h-screen justify-center m-2" >
+  <div class="m-5 h-130 w-150 p-5 bg-white">
+  <h1 class="text-center text-lg font-bold">Add Workout</h1>
+  <form class=" flex flex-col shadow-md p-4 justify-center " (ngSubmit)="adddata()">
+    <label for="Name" class="m-3 shadow-md p-3">
+      Username*
+      <input type="text" placeholder="enter name" name="Name" required class="p-1 m-1 w-100" [(ngModel)]="workouts.Name"/>
+    </label>
+    <label for="workouttype" class="m-3 shadow-md p-3">Workout Types*
+      <select [(ngModel)]="selectedWorkout" name="workouttype"class="p-1 m-1 w-120" [(ngModel)]="newtype">
+        <option *ngFor="let type of workoutTypes">{{ type }}</option>
+      </select>
+    </label>
+    <label for="totalminutes"class="m-3 shadow-md p-3">
+      Workout minutes
+      <input type="number" placeholder="enter workout minutes" name="totalminutes" class="p-1 m-1 w-120" [(ngModel)]="newminutes"/>
+    </label>
+    <div class="flex justify-center">
+
+      <button type="submit" class="bg-indigo-500 hover:bg-fuchsia-500 p-1 rounded-xl cursor-pointer m-5 w-40 text-center">Add</button>
+    </div>
+  </form>
+</div>
+</div>
