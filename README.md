@@ -91,7 +91,7 @@ Lines        : 94.8% ( 73/77 )
 
 ### 1️⃣ **Clone the Repository**
 ```sh
-git clone https://github.com/your-username/unit-test-coverage-example.git
+https://github.com/Raginipatel17/Health-tracker-app.git
 cd unit-test-coverage-example
 ```
 ### 2️⃣ **Install Dependencies**
@@ -99,13 +99,11 @@ cd unit-test-coverage-example
 npm install
 ```
 
-### 3️⃣ **Run Tests with Coverage Report**
+### 3️⃣ **Run Tests with Coverage Reports**
 ```
-npm test -- --coverage
+ng test --no-watch --code-coverage
 ```
-## Some Application ScreenShots
-![App Screenshot](//Health-tracker-app/public/Screenshot%202025-02-03%20161448.png)<br>
-![App Screenshot](//Health-tracker-app/public/Screenshot%202025-02-03%20161710.png)<br>
-![App Screenshot](//Health-tracker-app/public/Screenshot%202025-02-03%20161734.png)<br>
-![App Screenshot](//Health-tracker-app/public/Screenshot%202025-02-03%20161823.png)<br>
-![App Screenshot](//Health-tracker-app/public/Screenshot%202025-02-03%20161843.png)
+Or 
+```
+ng test
+```
